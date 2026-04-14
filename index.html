@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LuxeEstates | Premium Real Estate</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="container nav-container">
+            <div class="logo">
+                <h1>LUXEESTATES</h1>
+            </div>
+            <div class="nav-links">
+                <a href="index.html" class="active">Home</a>
+                <a href="listings.html">Listings</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container hero-content">
+            <h2>Find Your Dream Home</h2>
+            <p>Discover the most exclusive properties in the world's most desirable locations.</p>
+            <a href="listings.html" class="btn">View Properties</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="search-section">
+            <input type="text" id="searchInput" placeholder="Search by location or keywords...">
+            <select id="typeSelect">
+                <option value="All">All Types</option>
+                <option value="House">House</option>
+                <option value="Villa">Villa</option>
+                <option value="Apartment">Apartment</option>
+                <option value="Townhouse">Townhouse</option>
+            </select>
+            <button class="btn" onclick="window.location.href='listings.html'">Search</button>
+        </section>
+
+        <section>
+            <h3 class="section-title">Featured Properties</h3>
+            <div class="property-grid" id="featuredGrid">
+                <!-- Properties will be injected here by JS -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 LuxeEstates. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Init home page
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof renderFeaturedProperties === 'function') {
+                renderFeaturedProperties();
+            }
+        });
+    </script>
+</body>
+</html>

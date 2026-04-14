@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Details | LuxeEstates</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Three.js CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+</head>
+<body>
+    <nav>
+        <div class="container nav-container">
+            <div class="logo">
+                <a href="index.html"><h1>LUXEESTATES</h1></a>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="listings.html" class="active">Listings</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <a href="listings.html" style="display: inline-block; margin-top: 2rem; color: var(--secondary-blue);">&larr; Back to Listings</a>
+
+        <div class="details-container" id="propertyDetails">
+            <!-- Property details will be injected here -->
+            <div class="details-content">Loading property details...</div>
+            <div class="viewer-container" id="canvas-container">
+                <!-- 3D Model will be rendered here -->
+            </div>
+        </div>
+    </main>
+
+    <footer style="margin-top: 4rem;">
+        <div class="container">
+            <p>&copy; 2023 LuxeEstates. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+    <script src="three-setup.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof initPropertyDetails === 'function') {
+                initPropertyDetails();
+            }
+            if (typeof initThreeJS === 'function') {
+                initThreeJS();
+            }
+        });
+    </script>
+</body>
+</html>
