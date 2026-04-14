@@ -12,7 +12,12 @@
             <div class="logo">
                 <a href="index.html"><h1>LUXEESTATES</h1></a>
             </div>
-            <div class="nav-links">
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="nav-links" id="navLinks">
                 <a href="index.html">Home</a>
                 <a href="listings.html">Listings</a>
                 <a href="about.html" class="active">About</a>
@@ -96,5 +101,14 @@
             <p>&copy; 2023 LuxeEstates. All rights reserved.</p>
         </div>
     </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof initMobileMenu === 'function') {
+                initMobileMenu();
+            }
+        });
+    </script>
 </body>
 </html>

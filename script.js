@@ -177,3 +177,22 @@ function initContactForm() {
         }
     });
 }
+
+// Mobile menu toggle
+function initMobileMenu() {
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    
+    if (!menuToggle || !navLinks) return;
+    
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+}
+
+// Initialize mobile menu on page load
+document.addEventListener('DOMContentLoaded', () => {
+    if (typeof initMobileMenu === 'function') {
+        initMobileMenu();
+    }
+});

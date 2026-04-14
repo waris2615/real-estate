@@ -10,9 +10,14 @@
     <nav>
         <div class="container nav-container">
             <div class="logo">
-                <h1>LUXEESTATES</h1>
+                <a href="index.html"><h1>LUXEESTATES</h1></a>
             </div>
-            <div class="nav-links">
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="nav-links" id="navLinks">
                 <a href="index.html" class="active">Home</a>
                 <a href="listings.html">Listings</a>
                 <a href="about.html">About</a>
@@ -114,6 +119,9 @@
         document.addEventListener('DOMContentLoaded', () => {
             if (typeof renderFeaturedProperties === 'function') {
                 renderFeaturedProperties();
+            }
+            if (typeof initMobileMenu === 'function') {
+                initMobileMenu();
             }
         });
     </script>
